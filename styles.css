@@ -126,7 +126,7 @@ h4 { font-size: 1.125rem; }
 .highlight-cycle.word-enter-final::before {
   content: '';
   position: absolute;
-  top: 50%;
+  top: calc(100% + 6px);
   left: -20px;
   right: -20px;
   height: 2px;
