@@ -638,7 +638,7 @@ const serviceContent = {
     ]
   },
   workflow: {
-    title: 'Clinical Workflow Solutions',
+    title: 'Clinical Workflows',
     icon: 'fa-stethoscope',
     tagline: 'Automate the clinical and administrative workflows that pull your team away from patients.',
     features: [
@@ -735,7 +735,7 @@ const legalContent = {
         <li>Service interests and business challenges</li>
         <li>Financial information related to your revenue cycle (provided during consultations)</li>
       </ul>
-      <p><strong>Protected Health Information (PHI):</strong> In the course of providing revenue cycle management, lab operations consulting, and clinical workflow solutions, we may access or handle PHI on behalf of our clients. All PHI is handled in strict accordance with HIPAA regulations and our Business Associate Agreements (BAAs).</p>
+      <p><strong>Protected Health Information (PHI):</strong> In the course of providing revenue cycle management, lab operations consulting, and clinical workflows, we may access or handle PHI on behalf of our clients. All PHI is handled in strict accordance with HIPAA regulations and our Business Associate Agreements (BAAs).</p>
       <p><strong>Automatically Collected Information:</strong></p>
       <ul>
         <li>IP address and browser type</li>
@@ -816,7 +816,7 @@ const legalContent = {
       <ul>
         <li><strong>Revenue Cycle Services:</strong> ERA/EFT enrollments, claim submission optimization, payer-specific auditing, eligibility verification, out-of-network claims recovery</li>
         <li><strong>Lab Operations Consulting:</strong> Process optimization, staff training, quality assurance, compliance programs, test panel building</li>
-        <li><strong>Clinical Workflow Solutions:</strong> EHR/EMR optimization, documentation automation, care coordination, patient communication, and operational redesign that reduces administrative load on clinical teams</li>
+        <li><strong>Clinical Workflows:</strong> EHR/EMR optimization, documentation automation, care coordination, patient communication, and operational redesign that reduces administrative load on clinical teams</li>
         <li><strong>Marketing Guidance:</strong> Sales team development, productivity tracking, growth strategy, physician outreach, patient acquisition</li>
       </ul>
       <p>Specific scope of services will be defined in a separate engagement agreement or statement of work.</p>
