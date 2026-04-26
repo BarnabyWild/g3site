@@ -619,7 +619,7 @@ const serviceContent = {
     ]
   },
   lab: {
-    title: 'Lab Operations Consulting',
+    title: 'Operational Enhancement',
     icon: 'fa-flask',
     tagline: 'Optimize every step of your laboratory workflow with hands-on expertise.',
     features: [
@@ -735,7 +735,7 @@ const legalContent = {
         <li>Service interests and business challenges</li>
         <li>Financial information related to your revenue cycle (provided during consultations)</li>
       </ul>
-      <p><strong>Protected Health Information (PHI):</strong> In the course of providing revenue cycle management, lab operations consulting, and clinical workflows, we may access or handle PHI on behalf of our clients. All PHI is handled in strict accordance with HIPAA regulations and our Business Associate Agreements (BAAs).</p>
+      <p><strong>Protected Health Information (PHI):</strong> In the course of providing revenue cycle management, operational enhancement, and clinical workflows, we may access or handle PHI on behalf of our clients. All PHI is handled in strict accordance with HIPAA regulations and our Business Associate Agreements (BAAs).</p>
       <p><strong>Automatically Collected Information:</strong></p>
       <ul>
         <li>IP address and browser type</li>
@@ -748,7 +748,7 @@ const legalContent = {
       <h3>3. How We Use Your Information</h3>
       <ul>
         <li>Respond to your inquiries and provide consultation services</li>
-        <li>Deliver our revenue cycle management, lab operations, clinical workflow, and automation consulting services</li>
+        <li>Deliver our revenue cycle management, operational enhancement, clinical workflow, and automation consulting services</li>
         <li>Communicate with you about our services, updates, and industry insights</li>
         <li>Improve our website, services, and user experience</li>
         <li>Comply with legal obligations and protect our rights</li>
@@ -815,7 +815,7 @@ const legalContent = {
       <h3>2. Description of Services</h3>
       <ul>
         <li><strong>Revenue Cycle Services:</strong> ERA/EFT enrollments, claim submission optimization, payer-specific auditing, eligibility verification, out-of-network claims recovery</li>
-        <li><strong>Lab Operations Consulting:</strong> Process optimization, staff training, quality assurance, compliance programs, test panel building</li>
+        <li><strong>Operational Enhancement:</strong> Process optimization, staff training, quality assurance, compliance programs, test panel building</li>
         <li><strong>Clinical Workflows:</strong> EHR/EMR optimization, documentation automation, care coordination, patient communication, and operational redesign that reduces administrative load on clinical teams</li>
         <li><strong>Automation Consulting:</strong> Process automation, AI integration, system and data integrations, reporting automation, back-office tooling, and custom internal applications</li>
       </ul>
