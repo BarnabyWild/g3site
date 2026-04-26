@@ -656,23 +656,23 @@ const serviceContent = {
       { val: '30 days', label: 'Implementation' }
     ]
   },
-  marketing: {
-    title: 'Marketing Guidance',
-    icon: 'fa-bullhorn',
-    tagline: 'Hands-on marketing and sales consulting tailored to healthcare providers.',
+  automation: {
+    title: 'Automation Consulting',
+    icon: 'fa-robot',
+    tagline: 'End-to-end automation consulting that takes repetitive work off your team.',
     features: [
-      { title: 'Sales Team Development', desc: 'Build a high-performing sales team with territory management and physician relationship training.' },
-      { title: 'Productivity & KPIs', desc: 'Data-driven dashboards, call tracking, and performance metrics to optimize results.' },
-      { title: 'Growth Strategy', desc: 'Market analysis and competitive positioning to identify your highest-value opportunities.' },
-      { title: 'Physician Outreach', desc: 'Structured programs from lunch-and-learns to clinical partnerships with referring physicians.' },
-      { title: 'Patient Acquisition', desc: 'Community outreach, digital presence, and referral network development strategies.' },
-      { title: 'Brand Positioning', desc: 'Differentiate your lab or practice in a competitive market with clear, compelling messaging.' }
+      { title: 'Process Automation', desc: 'Map manual workflows and replace high-volume, low-judgment steps with reliable automated systems.' },
+      { title: 'AI Integration', desc: 'Practical AI deployments for documentation, intake, summarization, and decision support, scoped to real ROI.' },
+      { title: 'System Integration', desc: 'Connect EHRs, billing platforms, lab systems, and back-office tools so data moves without copy-paste.' },
+      { title: 'Data & Reporting', desc: 'Automated dashboards and reporting pipelines that give leadership real numbers in real time.' },
+      { title: 'Back-Office Automation', desc: 'Streamline finance, HR, scheduling, and vendor management with rule-based and AI-driven tooling.' },
+      { title: 'Custom Internal Tools', desc: 'Lightweight apps and bots built around the bottlenecks your team actually hits, not generic SaaS.' }
     ],
     stats: [
-      { val: '3x', label: 'Volume Growth' },
-      { val: '60%', label: 'More Referrals' },
-      { val: '45%', label: 'Sales Productivity' },
-      { val: '90 days', label: 'First Results' }
+      { val: '70%', label: 'Manual Work Cut' },
+      { val: '20+', label: 'Hours Saved Weekly' },
+      { val: '5x', label: 'Faster Reporting' },
+      { val: '60 days', label: 'First Wins' }
     ]
   }
 };
@@ -681,7 +681,7 @@ const svcAccents = {
   rcm: '#00d4aa',
   lab: '#3864dc',
   workflow: '#dc50aa',
-  marketing: '#dcaa00'
+  automation: '#dcaa00'
 };
 
 function openService(type) {
@@ -748,7 +748,7 @@ const legalContent = {
       <h3>3. How We Use Your Information</h3>
       <ul>
         <li>Respond to your inquiries and provide consultation services</li>
-        <li>Deliver our revenue cycle management, lab operations, clinical workflow, and marketing consulting services</li>
+        <li>Deliver our revenue cycle management, lab operations, clinical workflow, and automation consulting services</li>
         <li>Communicate with you about our services, updates, and industry insights</li>
         <li>Improve our website, services, and user experience</li>
         <li>Comply with legal obligations and protect our rights</li>
@@ -817,7 +817,7 @@ const legalContent = {
         <li><strong>Revenue Cycle Services:</strong> ERA/EFT enrollments, claim submission optimization, payer-specific auditing, eligibility verification, out-of-network claims recovery</li>
         <li><strong>Lab Operations Consulting:</strong> Process optimization, staff training, quality assurance, compliance programs, test panel building</li>
         <li><strong>Clinical Workflows:</strong> EHR/EMR optimization, documentation automation, care coordination, patient communication, and operational redesign that reduces administrative load on clinical teams</li>
-        <li><strong>Marketing Guidance:</strong> Sales team development, productivity tracking, growth strategy, physician outreach, patient acquisition</li>
+        <li><strong>Automation Consulting:</strong> Process automation, AI integration, system and data integrations, reporting automation, back-office tooling, and custom internal applications</li>
       </ul>
       <p>Specific scope of services will be defined in a separate engagement agreement or statement of work.</p>
 
