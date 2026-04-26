@@ -637,23 +637,23 @@ const serviceContent = {
       { val: '3x', label: 'Onboarding Speed' }
     ]
   },
-  wound: {
-    title: 'Wound Care Solutions',
-    icon: 'fa-heartbeat',
-    tagline: 'Complete wound care program implementation from clinical protocol to reimbursement.',
+  workflow: {
+    title: 'Clinical Workflow Solutions',
+    icon: 'fa-stethoscope',
+    tagline: 'Automate the clinical and administrative workflows that pull your team away from patients.',
     features: [
-      { title: 'Treatment Implementation', desc: 'Full clinical program setup with protocols, screening criteria, and follow-up care plans.' },
-      { title: 'Insurance Navigation', desc: 'Medicare and major commercial insurer coverage handled with proper coding and authorization.' },
-      { title: 'Revenue Cycle Support', desc: 'Dedicated billing for wound care claims with payer-specific coding and documentation.' },
-      { title: 'Clinical Training', desc: 'Staff training on wound assessment, treatment techniques, and patient education.' },
-      { title: 'Supply Chain', desc: 'Reliable sourcing and inventory management coordinated directly with manufacturers.' },
-      { title: 'Program Scaling', desc: 'Ongoing support to grow your wound care program across multiple locations.' }
+      { title: 'EHR/EMR Optimization', desc: 'Cleaner documentation flows and fewer clicks per chart so providers spend less time fighting their software.' },
+      { title: 'Documentation Automation', desc: 'Templated notes, structured intake, and AI-assisted charting that cut hours of daily admin work.' },
+      { title: 'Care Coordination', desc: 'Streamlined handoffs between front desk, clinical, and billing teams so patients keep moving through care.' },
+      { title: 'Patient Communication', desc: 'Automated reminders, intake forms, and follow-up workflows that improve adherence and free up staff time.' },
+      { title: 'Compliance & Quality', desc: 'Built-in checks that keep documentation audit-ready without adding manual review steps.' },
+      { title: 'Workflow Optimization', desc: 'Operational redesign that aligns staffing, scheduling, and tasks with how your team actually works.' }
     ],
     stats: [
-      { val: '92%', label: 'Healing Rate' },
-      { val: '$150K+', label: 'New Revenue' },
-      { val: 'Medicare', label: 'Covered' },
-      { val: '30 days', label: 'Launch Time' }
+      { val: '40%', label: 'Less Admin Time' },
+      { val: '2x', label: 'Patient Throughput' },
+      { val: '99%', label: 'Audit Pass Rate' },
+      { val: '30 days', label: 'Implementation' }
     ]
   },
   marketing: {
@@ -680,7 +680,7 @@ const serviceContent = {
 const svcAccents = {
   rcm: '#00d4aa',
   lab: '#3864dc',
-  wound: '#dc50aa',
+  workflow: '#dc50aa',
   marketing: '#dcaa00'
 };
 
@@ -735,7 +735,7 @@ const legalContent = {
         <li>Service interests and business challenges</li>
         <li>Financial information related to your revenue cycle (provided during consultations)</li>
       </ul>
-      <p><strong>Protected Health Information (PHI):</strong> In the course of providing revenue cycle management, lab operations consulting, and wound care solutions, we may access or handle PHI on behalf of our clients. All PHI is handled in strict accordance with HIPAA regulations and our Business Associate Agreements (BAAs).</p>
+      <p><strong>Protected Health Information (PHI):</strong> In the course of providing revenue cycle management, lab operations consulting, and clinical workflow solutions, we may access or handle PHI on behalf of our clients. All PHI is handled in strict accordance with HIPAA regulations and our Business Associate Agreements (BAAs).</p>
       <p><strong>Automatically Collected Information:</strong></p>
       <ul>
         <li>IP address and browser type</li>
@@ -748,7 +748,7 @@ const legalContent = {
       <h3>3. How We Use Your Information</h3>
       <ul>
         <li>Respond to your inquiries and provide consultation services</li>
-        <li>Deliver our revenue cycle management, lab operations, wound care, and marketing consulting services</li>
+        <li>Deliver our revenue cycle management, lab operations, clinical workflow, and marketing consulting services</li>
         <li>Communicate with you about our services, updates, and industry insights</li>
         <li>Improve our website, services, and user experience</li>
         <li>Comply with legal obligations and protect our rights</li>
@@ -816,7 +816,7 @@ const legalContent = {
       <ul>
         <li><strong>Revenue Cycle Services:</strong> ERA/EFT enrollments, claim submission optimization, payer-specific auditing, eligibility verification, out-of-network claims recovery</li>
         <li><strong>Lab Operations Consulting:</strong> Process optimization, staff training, quality assurance, compliance programs, test panel building</li>
-        <li><strong>Wound Care Solutions:</strong> Stem cell wound patch program implementation, insurance navigation, clinical training, revenue cycle support</li>
+        <li><strong>Clinical Workflow Solutions:</strong> EHR/EMR optimization, documentation automation, care coordination, patient communication, and operational redesign that reduces administrative load on clinical teams</li>
         <li><strong>Marketing Guidance:</strong> Sales team development, productivity tracking, growth strategy, physician outreach, patient acquisition</li>
       </ul>
       <p>Specific scope of services will be defined in a separate engagement agreement or statement of work.</p>
