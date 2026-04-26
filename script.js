@@ -950,7 +950,7 @@ const legalContent = {
 
       <h3>10. Contact Our Privacy Officer</h3>
       <div class="legal-contact">
-        <p><strong>G3 Innovative Solutions — Privacy Office</strong></p>
+        <p><strong>G3 Innovative Solutions, Privacy Office</strong></p>
         <p><i class="fas fa-map-marker-alt"></i> Dallas, TX</p>
         <p><i class="fas fa-phone"></i> +1 (701) 306-6539</p>
         <p><i class="fas fa-envelope"></i> sales@G3innovative.com</p>
