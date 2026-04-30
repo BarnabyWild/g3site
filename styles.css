@@ -2689,7 +2689,7 @@ h4 { font-size: clamp(1rem, 0.4vw + 0.85rem, 1.125rem); }
     gap: 12px;
     width: 100%;
     padding: 18px 28px;
-    border-radius: 999px;
+    border-radius: var(--radius-md);
     background: linear-gradient(135deg, var(--accent) 0%, #00f0c0 50%, var(--accent-hover) 100%);
     color: var(--primary);
     font-family: var(--font-display);
@@ -2732,7 +2732,7 @@ h4 { font-size: clamp(1rem, 0.4vw + 0.85rem, 1.125rem); }
 
   .hero-cta .btn-primary {
     padding: 18px 28px;
-    border-radius: 999px;
+    border-radius: var(--radius-md);
     background: linear-gradient(135deg, var(--accent) 0%, #00f0c0 50%, var(--accent-hover) 100%);
     font-family: var(--font-display);
     font-size: 1.0625rem;
@@ -2742,6 +2742,15 @@ h4 { font-size: clamp(1rem, 0.4vw + 0.85rem, 1.125rem); }
       0 0 0 1px rgba(255, 255, 255, 0.18) inset,
       0 12px 32px rgba(0, 212, 170, 0.45),
       0 0 60px rgba(0, 212, 170, 0.35);
+  }
+
+  .hero-cta .btn-secondary {
+    padding: 18px 28px;
+    border-radius: var(--radius-md);
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
   }
 
   .hero-cta .btn-primary i {
