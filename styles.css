@@ -2611,6 +2611,36 @@ h4 { font-size: clamp(1rem, 0.4vw + 0.85rem, 1.125rem); }
     display: block;
   }
 
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 12px 24px 20px;
+    background: rgba(10, 37, 64, 0.97);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  }
+
+  .nav-links.active li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-links.active li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links.active a {
+    display: block;
+    padding: 14px 0;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
   .hero {
     min-height: auto;
   }
