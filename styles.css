@@ -1965,28 +1965,82 @@ h4 { font-size: clamp(1rem, 0.4vw + 0.85rem, 1.125rem); }
 }
 
 @media (max-width: 768px) {
+  .svc-overlay {
+    padding: 0;
+  }
+
   .svc-modal {
-    max-height: 94vh;
+    max-height: none;
+    height: 100vh;
+    height: 100dvh;
+    max-width: 100%;
+    border-radius: 0;
+    border: none;
   }
 
   .svc-hero {
-    padding: 40px 24px 28px;
+    padding: 24px 56px 22px 20px;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .svc-hero-icon {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    font-size: 1.25rem;
+  }
+
+  .svc-hero h2 {
+    font-size: 1.375rem;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .svc-hero > p,
+  .svc-hero-text > p {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .svc-close {
+    top: 12px;
+    right: 12px;
   }
 
   .svc-body {
-    padding: 20px 24px;
+    padding: 20px 20px 16px;
   }
 
   .svc-features {
     grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .svc-feature {
+    padding: 14px 16px;
   }
 
   .svc-stats {
     grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .svc-stat {
+    padding: 14px 8px;
+  }
+
+  .svc-stat-val {
+    font-size: 1.25rem;
   }
 
   .svc-footer {
-    padding: 16px 24px;
+    padding: 14px 20px calc(14px + env(safe-area-inset-bottom));
+  }
+
+  .svc-footer .btn {
+    width: 100%;
   }
 }
 
@@ -2125,19 +2179,34 @@ h4 { font-size: clamp(1rem, 0.4vw + 0.85rem, 1.125rem); }
 
 @media (max-width: 768px) {
   .legal-overlay {
-    padding: 12px;
+    padding: 0;
   }
 
   .legal-modal {
-    max-height: 92vh;
+    max-height: none;
+    height: 100vh;
+    height: 100dvh;
+    max-width: 100%;
+    border-radius: 0;
+    border: none;
   }
 
   .legal-modal-header {
-    padding: 20px 24px;
+    padding: 18px 20px;
+  }
+
+  .legal-modal-header h2 {
+    font-size: 1.25rem;
   }
 
   .legal-modal-body {
-    padding: 24px 24px 32px;
+    padding: 20px 20px calc(28px + env(safe-area-inset-bottom));
+    line-height: 1.7;
+  }
+
+  .legal-modal-body h3 {
+    font-size: 1.0625rem;
+    margin: 24px 0 10px;
   }
 }
 
