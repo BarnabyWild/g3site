@@ -45,10 +45,29 @@ document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelector('.nav-links');
 
   if (mobileToggle) {
+    function closeMobileMenu() {
+      navLinks.classList.remove('active');
+      navbar.classList.remove('menu-open');
+      const modalOpen = document.querySelector('.consultation-overlay.active, .svc-overlay.active, .legal-overlay.active');
+      document.body.style.overflow = modalOpen ? 'hidden' : '';
+      mobileToggle.querySelector('i').classList.add('fa-bars');
+      mobileToggle.querySelector('i').classList.remove('fa-times');
+    }
+
     mobileToggle.addEventListener('click', function() {
-      navLinks.classList.toggle('active');
+      const isOpen = navLinks.classList.toggle('active');
+      navbar.classList.toggle('menu-open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
       this.querySelector('i').classList.toggle('fa-bars');
       this.querySelector('i').classList.toggle('fa-times');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) closeMobileMenu();
     });
   }
 
