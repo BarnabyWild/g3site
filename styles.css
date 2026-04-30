@@ -2730,6 +2730,33 @@ h4 { font-size: clamp(1rem, 0.4vw + 0.85rem, 1.125rem); }
     width: 100%;
   }
 
+  .hero-cta .btn-primary {
+    padding: 18px 28px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--accent) 0%, #00f0c0 50%, var(--accent-hover) 100%);
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+      0 12px 32px rgba(0, 212, 170, 0.45),
+      0 0 60px rgba(0, 212, 170, 0.35);
+  }
+
+  .hero-cta .btn-primary i {
+    font-size: 0.875rem;
+    transition: transform 0.2s ease;
+  }
+
+  .hero-cta .btn-primary:active {
+    transform: scale(0.98);
+  }
+
+  .hero-cta .btn-primary:active i {
+    transform: translateX(3px);
+  }
+
   .form-row {
     grid-template-columns: 1fr;
   }
@@ -2752,26 +2779,103 @@ h4 { font-size: clamp(1rem, 0.4vw + 0.85rem, 1.125rem); }
 
   .radio-cards {
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .radio-card-content {
+    padding: 16px 8px;
+    gap: 10px;
+    min-height: 96px;
+    justify-content: center;
+    font-size: 0.8125rem;
+    line-height: 1.25;
+  }
+
+  .radio-card-content i {
+    font-size: 1.5rem;
   }
 
   .checkbox-cards {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .checkbox-card-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+  }
+
+  .checkbox-card-content i {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 0;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 212, 170, 0.08);
+    border-radius: 10px;
+  }
+
+  .consultation-overlay {
+    padding: 0;
   }
 
   .consultation-modal {
-    height: 92vh;
+    height: 100vh;
+    height: 100dvh;
+    max-width: 100%;
+    border-radius: 0;
+    border: none;
   }
 
   .consultation-header {
-    padding: 20px 20px 16px;
+    padding: 18px 20px 14px;
+    background: linear-gradient(180deg, rgba(0, 212, 170, 0.06), transparent);
+  }
+
+  .consultation-header-top {
+    margin-bottom: 16px;
   }
 
   .consultation-step {
-    padding: 24px 20px 32px;
+    padding: 20px 20px 28px;
+  }
+
+  .step-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 14px;
+    background: linear-gradient(135deg, rgba(0, 212, 170, 0.2), rgba(0, 212, 170, 0.06));
+    box-shadow: 0 6px 20px rgba(0, 212, 170, 0.18);
+  }
+
+  .step-icon i {
+    font-size: 1.625rem;
+  }
+
+  .step-header h3 {
+    font-size: 1.375rem;
+  }
+
+  .consultation-modal .form-group input,
+  .consultation-modal .form-group select,
+  .consultation-modal .form-group textarea {
+    padding: 16px;
+    font-size: 1rem;
   }
 
   .consultation-modal .form-row {
     grid-template-columns: 1fr;
+  }
+
+  .step-footer .btn {
+    padding: 14px 20px;
+    font-size: 0.9375rem;
   }
 
 
