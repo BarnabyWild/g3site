@@ -177,41 +177,70 @@ document.addEventListener('DOMContentLoaded', function() {
   const contactForm = document.getElementById('contactForm');
 
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
 
-      // Get form data
       const formData = new FormData(this);
       const data = Object.fromEntries(formData);
 
-      // Simple validation
       if (!data.name || !data.email) {
         showNotification('Please fill in all required fields.', 'error');
         return;
       }
 
-      // Simulate form submission
       const submitBtn = this.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
       submitBtn.disabled = true;
 
-      // Simulate API call
-      setTimeout(() => {
-        submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-        submitBtn.style.background = '#00d4aa';
+      const serviceLabels = {
+        rcm: 'Revenue Cycle Services',
+        lab: 'Operational Enhancement',
+        workflow: 'Clinical Workflows',
+        automation: 'Automation Consulting',
+        other: 'Other'
+      };
 
-        // Show success notification
-        showNotification('Thank you! We\'ll be in touch within 24 hours.', 'success');
+      const payload = {
+        access_key: '22027231-1cc1-4ab0-9c87-868701d399f9',
+        subject: `New G3 Contact Lead: ${data.name}`,
+        from_name: 'G3 Innovative Website',
+        replyto: data.email,
+        botcheck: data.botcheck || '',
+        'Full Name': data.name,
+        'Email': data.email,
+        'Company': data.company || '(not provided)',
+        'Service Interest': serviceLabels[data.service] || '(not selected)',
+        'Message': data.message || '(no message)'
+      };
 
-        // Reset form after delay
-        setTimeout(() => {
-          contactForm.reset();
-          submitBtn.innerHTML = originalText;
-          submitBtn.style.background = '';
-          submitBtn.disabled = false;
-        }, 3000);
-      }, 1500);
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const result = await res.json();
+
+        if (result.success) {
+          submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+          submitBtn.style.background = '#00d4aa';
+          showNotification("Thank you! We'll be in touch within 24 hours.", 'success');
+          setTimeout(() => {
+            contactForm.reset();
+            submitBtn.innerHTML = originalText;
+            submitBtn.style.background = '';
+            submitBtn.disabled = false;
+          }, 3000);
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (err) {
+        console.error('Contact form error:', err);
+        showNotification('Something went wrong. Please try again or email sales@G3innovative.com directly.', 'error');
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }
     });
   }
 
@@ -521,7 +550,7 @@ function prevStep(step) {
   updateProgress(step);
 }
 
-function submitConsultation() {
+async function submitConsultation() {
   const name = document.getElementById('consultName').value.trim();
   const email = document.getElementById('consultEmail').value.trim();
 
@@ -536,33 +565,112 @@ function submitConsultation() {
     return;
   }
 
-  const consultData = {
-    name: name,
-    email: email,
-    phone: document.getElementById('consultPhone').value,
-    company: document.getElementById('consultCompany').value,
-    role: document.querySelector('input[name="role"]:checked')?.value,
-    orgType: document.getElementById('orgType').value,
-    orgState: document.getElementById('orgState').value,
-    expectedRevenue: document.getElementById('expectedRevenue').value,
-    services: Array.from(document.querySelectorAll('input[name="services"]:checked')).map(el => el.value),
-    challenges: Array.from(document.querySelectorAll('input[name="challenges"]:checked')).map(el => el.value),
-    referralSource: document.getElementById('consultReferral').value
+  const roleLabels = {
+    'lab-director': 'Lab Director / Owner',
+    'practice-manager': 'Practice Manager',
+    'cfo-finance': 'CFO / Finance',
+    'physician': 'Physician / Clinical',
+    'admin': 'Administrator / Executive',
+    'other': 'Other'
+  };
+  const orgTypeLabels = {
+    'diagnostic-lab': 'Diagnostic Laboratory',
+    'clinical-lab': 'Clinical / Reference Lab',
+    'physician-practice': 'Physician Practice',
+    'clinic': 'Clinic / Urgent Care',
+    'hospital': 'Hospital / Health System',
+    'wound-care-center': 'Wound Care Center',
+    'startup': 'Healthcare Startup',
+    'other': 'Other'
+  };
+  const sizeLabels = {
+    '1-10': '1-10 employees',
+    '11-50': '11-50 employees',
+    '51-200': '51-200 employees',
+    '201-500': '201-500 employees',
+    '500+': '500+ employees'
+  };
+  const revenueLabels = {
+    'under-50k': 'Under $50,000',
+    '50k-100k': '$50,000 - $100,000',
+    '100k-250k': '$100,000 - $250,000',
+    '250k-500k': '$250,000 - $500,000',
+    '500k-1m': '$500,000 - $1,000,000',
+    '1m-plus': '$1,000,000+'
+  };
+  const serviceLabels = {
+    rcm: 'Revenue Cycle Services',
+    lab: 'Operational Enhancement',
+    workflow: 'Clinical Workflows',
+    automation: 'Automation Consulting'
+  };
+  const challengeLabels = {
+    denials: 'High claim denial rates',
+    collections: 'Slow collections',
+    oon: 'Out-of-network write-offs',
+    compliance: 'Compliance concerns',
+    staffing: 'Staffing / training gaps',
+    growth: 'Need to grow volume',
+    'new-revenue': 'Looking for new revenue streams',
+    startup: 'Launching a new lab/practice'
   };
 
-  console.log('Consultation submission:', consultData);
+  const role = document.querySelector('input[name="role"]:checked')?.value;
+  const orgType = document.getElementById('orgType').value;
+  const orgState = document.getElementById('orgState').value;
+  const companySize = document.getElementById('companySize').value;
+  const expectedRevenue = document.getElementById('expectedRevenue').value;
+  const services = Array.from(document.querySelectorAll('input[name="services"]:checked'))
+    .map(el => serviceLabels[el.value] || el.value);
+  const challenges = Array.from(document.querySelectorAll('input[name="challenges"]:checked'))
+    .map(el => challengeLabels[el.value] || el.value);
+
+  const payload = {
+    access_key: '22027231-1cc1-4ab0-9c87-868701d399f9',
+    subject: `New G3 Consultation Lead: ${name}`,
+    from_name: 'G3 Innovative Website',
+    replyto: email,
+    'Full Name': name,
+    'Email': email,
+    'Phone': document.getElementById('consultPhone').value || '(not provided)',
+    'Organization': document.getElementById('consultCompany').value || '(not provided)',
+    'Role': roleLabels[role] || role || '(not selected)',
+    'Organization Type': orgTypeLabels[orgType] || orgType || '(not selected)',
+    'Organization State': orgState || '(not selected)',
+    'Company Size': sizeLabels[companySize] || companySize || '(not selected)',
+    'Expected Monthly Revenue': revenueLabels[expectedRevenue] || expectedRevenue || '(not selected)',
+    'Services Of Interest': services.length ? services.join(', ') : '(none selected)',
+    'Top Challenges': challenges.length ? challenges.join(', ') : '(none selected)',
+    'Referral Source': document.getElementById('consultReferral').value || '(not provided)'
+  };
 
   const btn = document.querySelector('#step3 .btn-primary');
   const originalHTML = btn.innerHTML;
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
   btn.disabled = true;
 
-  setTimeout(() => {
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const result = await res.json();
+
+    if (result.success) {
+      btn.innerHTML = originalHTML;
+      btn.disabled = false;
+      showStep(5);
+      document.querySelector('.consultation-header').style.display = 'none';
+    } else {
+      throw new Error(result.message || 'Submission failed');
+    }
+  } catch (err) {
+    console.error('Consultation submission error:', err);
     btn.innerHTML = originalHTML;
     btn.disabled = false;
-    showStep(5);
-    document.querySelector('.consultation-header').style.display = 'none';
-  }, 1500);
+    showConsultNotification('Something went wrong. Please try again.', 'error');
+  }
 }
 
 function showConsultNotification(message, type) {
