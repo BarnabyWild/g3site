@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Add reveal animations to elements
   const animateElements = document.querySelectorAll(
-    '.service-card, .value-prop, .result-card, .testimonial-card, .visual-card'
+    '.service-card, .value-prop, .result-card, .story-letter, .belief, .visual-card'
   );
 
   animateElements.forEach((el, index) => {
