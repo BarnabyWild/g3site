@@ -373,6 +373,33 @@ h4 { font-size: clamp(1rem, 0.4vw + 0.85rem, 1.125rem); }
   box-shadow: 0 4px 16px var(--accent-glow);
 }
 
+/* Flow: the way into the G3 Flow app, beside the consultation button */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1vw, 14px);
+}
+
+.nav-flow {
+  padding: clamp(8px, 0.7vw, 10px) clamp(16px, 1.8vw, 24px);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: clamp(0.8125rem, 0.3vw + 0.7rem, 0.9375rem);
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.nav-flow:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.mobile-menu-flow {
+  display: none;
+}
+
 .mobile-toggle {
   display: none;
   background: none;
@@ -2685,8 +2712,13 @@ h4 { font-size: clamp(1rem, 0.4vw + 0.85rem, 1.125rem); }
 
 @media (max-width: 768px) {
   .nav-links,
-  .nav-cta {
+  .nav-cta,
+  .nav-flow {
     display: none;
+  }
+
+  .nav-links.active .mobile-menu-flow {
+    display: block;
   }
 
   .mobile-toggle {
