@@ -125,20 +125,6 @@ h4 { font-size: clamp(1rem, 0.4vw + 0.85rem, 1.125rem); }
   position: relative;
 }
 
-.highlight-cycle.word-enter-final::before {
-  content: '';
-  position: absolute;
-  top: calc(100% + 6px);
-  left: -20px;
-  right: -20px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent) 20%, var(--accent) 80%, transparent);
-  box-shadow: 0 0 20px var(--accent-glow), 0 0 40px var(--accent-glow);
-  animation: streakFlash 1s ease 0.15s forwards;
-  opacity: 0;
-  pointer-events: none;
-}
-
 .highlight-cycle.word-enter-final::after {
   content: '';
   position: absolute;
@@ -148,14 +134,6 @@ h4 { font-size: clamp(1rem, 0.4vw + 0.85rem, 1.125rem); }
   animation: streakGlow 1s ease 0.15s forwards;
   opacity: 0;
   pointer-events: none;
-}
-
-@keyframes streakFlash {
-  0%   { opacity: 0; left: 50%; right: 50%; }
-  15%  { opacity: 1; left: -40px; right: -40px; }
-  30%  { opacity: 0.8; left: -60px; right: -60px; }
-  60%  { opacity: 0.4; left: -80px; right: -80px; }
-  100% { opacity: 0; left: -100px; right: -100px; }
 }
 
 @keyframes streakGlow {
